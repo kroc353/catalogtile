@@ -1,21 +1,7 @@
-variable "ssh_key" {}
-variable "image_name" {}
-variable "privileged_resource_group" {}
-variable "vpc_name" {}
-variable "zone_1" {}
-variable "zone_2" {}
-variable "zone_3" {}
-variable "region" {}
-
 provider "ibm" {
   generation = 2
   region     = var.region
 }
-
-#locals {
-#  BASENAME = "ko-tf"
-#  ZONE     = "us-south-1"
-#}
 
 resource "ibm_is_vpc" "vpc" {
   name                      = "${var.vpc_name}-vpc"
