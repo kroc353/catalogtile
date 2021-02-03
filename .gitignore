@@ -58,3 +58,4 @@ debug
 # terraform
 *.tfvars
 *.tfstate*
+*.tar*
