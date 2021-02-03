@@ -1,13 +1,12 @@
 provider "ibm" {
-  generation = 2
-  region     = var.region
+  generation       = 2
+  region           = var.region
+  ibmcloud_timeout = 300
 }
 
 resource "ibm_is_vpc" "vpc" {
   name                      = "${var.vpc_name}-vpc"
   address_prefix_management = "manual"
-  #default_security_group = ibm_is_security_group.sg1.id
-  #default_network_acl    = ibm_is_network_acl.acl1.id
 }
 
 resource ibm_is_vpc_address_prefix "prefix1" {
@@ -290,13 +289,4 @@ resource "ibm_is_security_group_rule" "ingress_bigfix" {
     port_min = 52311
     port_max = 52311
   }
-}
-
-
-output "sshcommand" {
-  value = "ssh root@${ibm_is_floating_ip.fip1.address}"
-}
-
-output "vpcid" {
-  value = "The VPC ID is ${ibm_is_vpc.vpc.id}"
 }
