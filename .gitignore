@@ -59,3 +59,4 @@ debug
 *.tfvars
 *.tfstate*
 *.tar*
+*.tgz
