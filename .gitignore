@@ -60,3 +60,5 @@ debug
 *.tfstate*
 *.tar*
 *.tgz
+*.terraform/
+*.terraform
